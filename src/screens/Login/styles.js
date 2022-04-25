@@ -27,6 +27,14 @@ const styles = ScaledSheet.create({
   buttonText: {
     fontSize: '20@vs',
     color: 'white',
+  },
+  errorMessage: {
+    fontSize: '15@vs',
+    color: 'red',
+    alignSelf: 'center',
+    fontFamily: 'Chivo-Italic',
+    position: 'absolute',
+    marginTop: '290@vs',
   }
 });
 
