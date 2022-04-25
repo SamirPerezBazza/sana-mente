@@ -1,0 +1,33 @@
+import { ScaledSheet } from 'react-native-size-matters';
+
+const styles = ScaledSheet.create({
+  title: {
+    fontSize: '30@vs',
+    marginTop: '50@vs',
+    marginLeft: '30@s',
+  },
+  inputTitle: {
+    fontSize: '20@vs',
+    marginTop: '20@vs',
+  },
+  inputContainer: {
+    marginTop: '30@vs',
+    marginLeft: '30@s',
+  },
+  button: {
+    width: '190@s',
+    height: '36@vs',
+    backgroundColor: '#303030',
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginTop: '60@vs',
+  },
+  buttonText: {
+    fontSize: '20@vs',
+    color: 'white',
+  }
+});
+
+export default styles
