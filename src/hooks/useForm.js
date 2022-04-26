@@ -5,8 +5,6 @@ export const useForm = (initialState) => {
   const [errors, setErrors] = React.useState({});
 
   const handleChange = (name, value) => {
-    console.log("NAME=>", name)
-    console.log("value=>", value)
     setValues({
       ...values,
       [name]: value,
