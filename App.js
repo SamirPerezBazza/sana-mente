@@ -13,12 +13,12 @@ const App = () => {
         screenOptions={{
           headerShown: false
         }}
+        initialRouteName='WelcomeScreen'
       >
-        <Stack.Screen name="Login" component={Login} />
         {
-          // routes.map(route => (
-          //   <Stack.Screen key={route.name} name={route.name} component={route.component} />
-          // ))
+          routes.map(route => (
+            <Stack.Screen key={route.name} name={route.name} component={route.component} />
+          ))
         }
       </Stack.Navigator>
     </NavigationContainer>

@@ -42,17 +42,15 @@ const Register = () => {
       <View style={styles.buttonContainer}>
         <CustomText customStyles={styles.terms}>
           Al continuar estarás aceptando nuestras {'\n'}
-          <CustomText customStyles={{
-            ...styles.terms,
-             fontFamily: 'Chivo-Bold',
-            textDecorationLine: 'underline'
-          }}>políticas de privacidad
-          </CustomText> y 
-          <CustomText customStyles={{
-            ...styles.terms,
-            fontFamily: 'Chivo-Bold',
-            textDecorationLine: 'underline'
-          }}>términos y condiciones</CustomText>
+          <CustomText customStyles={{ ...styles.terms, fontFamily: 'Chivo-Bold', textDecorationLine: 'underline' }}
+          >
+            políticas de privacidad
+          </CustomText> y
+          <CustomText
+            customStyles={{ ...styles.terms, fontFamily: 'Chivo-Bold', textDecorationLine: 'underline' }}
+          >
+            términos y condiciones
+          </CustomText>
         </CustomText>
 
         <TouchableOpacity
@@ -63,7 +61,7 @@ const Register = () => {
         </TouchableOpacity>
       </View>
     </View>
-  )
-}
+  );
+};
 
 export default Register;

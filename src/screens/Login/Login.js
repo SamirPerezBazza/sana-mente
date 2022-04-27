@@ -5,20 +5,21 @@ import Input from '../../components/Input/Input'
 import { TouchableOpacity, View } from 'react-native'
 import { useForm } from '../../hooks/useForm'
 import { loginValidation } from '../../helpers/validation'
+import { NavigationHelpersContext, useNavigation } from '@react-navigation/native'
 
-const Login = () => {
+const Login = ({ navigation }) => {
 
   const [values, errors, setErrors, handleChange] = useForm({ email: '', password: '' });
 
-
   const handleSubmit = () => {
     const loginErrors = loginValidation(values);
-    
+
     if (Object.keys(loginErrors).length > 0) {
       setErrors(loginErrors);
     } else {
       setErrors({});
       //TODO: FETCH API 
+      navigation.push('WelcomeScreen');
     }
   }
 
