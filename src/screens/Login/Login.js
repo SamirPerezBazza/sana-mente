@@ -19,7 +19,7 @@ const Login = ({ navigation }) => {
     } else {
       setErrors({});
       //TODO: FETCH API 
-      navigation.push('WelcomeScreen');
+      navigation.navigate('DashboardScreen', {screen: 'FeedScreen' });
     }
   }
 
@@ -28,7 +28,7 @@ const Login = ({ navigation }) => {
       <CustomText customStyles={styles.title}>Ingresa</CustomText>
       <View style={styles.inputContainer}>
         <CustomText customStyles={styles.inputTitle}>Email</CustomText>
-        <Input placeHolder="Ingrese su correo" name="email" value={values.email} onChange={handleChange} />
+        <Input type="email-address" placeHolder="Ingrese su correo" name="email" value={values.email} onChange={handleChange} />
         <CustomText customStyles={styles.inputTitle}>Contraseña</CustomText>
         <Input placeHolder="Ingrese su contraseña" name="password" value={values.password} onChange={handleChange} isPassword />
       </View>
