@@ -6,6 +6,7 @@ import { TouchableOpacity, View } from 'react-native'
 import { useForm } from '../../hooks/useForm'
 import { loginValidation } from '../../helpers/validation'
 import { NavigationHelpersContext, useNavigation } from '@react-navigation/native'
+import { storeData } from '../../helpers/storage'
 
 const Login = ({ navigation }) => {
 
@@ -19,7 +20,9 @@ const Login = ({ navigation }) => {
     } else {
       setErrors({});
       //TODO: FETCH API 
-      navigation.navigate('DashboardScreen', {screen: 'FeedScreen' });
+      storeData('login', JSON.stringify(values)).then(()=>{
+        navigation.navigate('DashboardScreen', {screen: 'FeedScreen' });
+      });
     }
   }
 

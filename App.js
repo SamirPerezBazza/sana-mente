@@ -6,6 +6,7 @@ import { routes } from './src/routes/stack/routes-stack';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+
   return (
     <NavigationContainer>
       <Stack.Navigator

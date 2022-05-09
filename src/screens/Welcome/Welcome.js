@@ -1,7 +1,8 @@
-import { ScrollView, TouchableOpacity, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import CustomText from '../../components/CustomText/CustomText';
-import React, { useState } from 'react';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
+import { getData } from '../../helpers/storage';
 
 const Welcome = ({ navigation }) => {
 
@@ -12,8 +13,6 @@ const Welcome = ({ navigation }) => {
 
   const goToRegister = () => navigation.push('RegisterScreen');
 
-
-
   const onChange = ({ nativeEvent }) => {
     const activeValue = Math.floor(
       nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width
@@ -22,6 +21,20 @@ const Welcome = ({ navigation }) => {
     setActive(activeValue);
 
   };
+
+
+  async function getFirstScreen() {
+    const isLogged = await getData('login');
+    console.log(isLogged);
+    if (isLogged) {
+      navigation.navigate('DashboardScreen', { screen: 'FeedScreen' });
+    }
+  }
+
+  useEffect(() => {
+   getFirstScreen();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <View style={styles.container}>
