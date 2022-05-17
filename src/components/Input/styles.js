@@ -8,6 +8,7 @@ const styles = ScaledSheet.create({
     borderRadius: 5,
     paddingLeft: '15@s',
     fontSize: '12@vs',
+    color: "black",
   }
 });
 

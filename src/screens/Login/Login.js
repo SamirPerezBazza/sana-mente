@@ -7,6 +7,7 @@ import { useForm } from '../../hooks/useForm'
 import { loginValidation } from '../../helpers/validation'
 import { NavigationHelpersContext, useNavigation } from '@react-navigation/native'
 import { storeData } from '../../helpers/storage'
+import http from '../../helpers/http'
 
 const Login = ({ navigation }) => {
 
@@ -19,10 +20,20 @@ const Login = ({ navigation }) => {
       setErrors(loginErrors);
     } else {
       setErrors({});
-      //TODO: FETCH API 
-      storeData('login', JSON.stringify(values)).then(()=>{
-        navigation.navigate('DashboardScreen', {screen: 'FeedScreen' });
+      http.post('http://sana-mente-api.herokuapp.com/api/auth/signin',
+        {
+          body: values
+        }
+      )
+      .then(({response})=>response.data)
+      .then((res)=>{
+        storeData('login', JSON.stringify({...values, token: res.token})).then(() => {
+        navigation.navigate('DashboardScreen', { screen: 'FeedScreen' });
       });
+      })
+      .catch((err)=>{
+        console.log("Error=>", err)
+      })
     }
   }
 
