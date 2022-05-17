@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { routesTab } from '../../routes/tab/routes-tab';
 import HomeSvg from '../../assets/svgs/home';
 import GroupsSvg from '../../assets/svgs/groups';
+import ChatTabSvg from '../../assets/svgs/chatTab';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,8 @@ const Dashboard = () => {
             iconName = <HomeSvg color={color}/>;
           } else if (route.name === 'GroupsScreen') {
             iconName = <GroupsSvg color={color}/>;
+          } else if (route.name === 'ChatScreen') {
+            iconName = <ChatTabSvg color={color}/>;
           }
           return iconName;
         },

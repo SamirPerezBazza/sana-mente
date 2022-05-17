@@ -19,6 +19,7 @@ const Register = () => {
       setErrors(registerErrors);
     } else {
       setErrors({});
+      navigation.navigate('ProcessScreen')
       //Fetch API
     }
   }
@@ -28,7 +29,7 @@ const Register = () => {
       <CustomText customStyles={styles.title}>Regístrate</CustomText>
       <View style={styles.inputContainer}>
         <CustomText customStyles={styles.inputTitle}>Email</CustomText>
-        <Input placeHolder="Ingrese su correo" name="email" value={values.email} onChange={handleChange} />
+        <Input type="email-address" placeHolder="Ingrese su correo" name="email" value={values.email} onChange={handleChange} />
         <CustomText customStyles={styles.inputTitle}>Contraseña</CustomText>
         <Input placeHolder="Ingrese su contraseña" name="password" value={values.password} onChange={handleChange} isPassword />
         <CustomText customStyles={styles.tooltip}>tu contraseña debe tener 8 caracteres o más :)</CustomText>

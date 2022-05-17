@@ -2,6 +2,7 @@ import Welcome from "../../screens/Welcome/Welcome";
 import Login from "../../screens/Login/Login";
 import Register from "../../screens/Register/Register";
 import Dashboard from "../../screens/Dashboard/Dashboard";
+import Process from "../../screens/Register/Process/Process";
 
 export const routes = [
   {
@@ -15,6 +16,10 @@ export const routes = [
   {
     name: 'RegisterScreen',
     component: Register,
+  },
+  {
+    name: 'ProcessScreen',
+    component: Process,
   },
   {
     name: 'DashboardScreen',
