@@ -1,14 +1,34 @@
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { View, Text, TouchableOpacity, ScrollView, Modal, ActivityIndicator } from 'react-native'
 import React from 'react'
 import CustomText from '../../../components/CustomText/CustomText'
 import BellSvg from '../../../assets/svgs/bell'
 import AddSvg from '../../../assets/svgs/add'
 import { images } from '../../../helpers/imageArray'
 import { styles } from './styles'
+import useFeed from './useFeed'
 
 const Feed = () => {
 
+  const colours = [
+    "#FFD75D",
+    "#32CFEE",
+    "#26D1A3",
+    "#FFCBFF"];
 
+  const getColour = (index) => colours[index % colours.length];
+
+  const {
+    keywords,
+    setKeywords,
+    results,
+    loading,
+    error,
+    modalVisible,
+    setModalVisible,
+    words,
+    handlePress
+  } = useFeed();
 
   return (
     <View style={styles.container}>
@@ -29,39 +49,57 @@ const Feed = () => {
         }
       </View>
       <View>
+        <Modal
+          animationType='slide'
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(false);
+          }}
+        >
+          <View style={styles.modalContainer}>
+            {
+              words.map((word, index) => {
+                const color = keywords.includes(word) ? "#FFD75D" : "#303030";
+
+                return (
+                  <TouchableOpacity 
+                  key={index}
+                   style={[styles.modalItem, { backgroundColor: color }]}
+                    onPress={() => handlePress(word)}>
+                    <CustomText customStyles={styles.keyword}>{word}</CustomText>
+                  </TouchableOpacity>
+                )
+              })
+            }
+          </View>
+        </Modal>
         <View style={styles.groupTitle}>
           <CustomText customStyles={styles.middleText}>explora grupos</CustomText>
-          <CustomText customStyles={styles.lightText}>ver todos</CustomText>
+          <TouchableOpacity onPress={()=>setModalVisible(true)}>
+            <CustomText customStyles={styles.lightText}>palabras</CustomText>
+          </TouchableOpacity>
         </View>
         <View style={styles.scrollContainer}>
           <ScrollView style={styles.scroll} horizontal showsHorizontalScrollIndicator={false}>
-            <View>
-              <View style={[styles.groupBox, { backgroundColor: '#FFD75D' }]}>
-                <TouchableOpacity style={styles.addButton}>
-                  <AddSvg />
-                </TouchableOpacity>
-              </View>
-              <CustomText customStyles={styles.groupName}>mente sana</CustomText>
-              <CustomText customStyles={styles.groupAuthor}>Karol M.</CustomText>
-            </View>
-            <View>
-              <View style={[styles.groupBox, { backgroundColor: '#32CFEE' }]}>
-                <TouchableOpacity style={styles.addButton}>
-                  <AddSvg />
-                </TouchableOpacity>
-              </View>
-              <CustomText customStyles={styles.groupName}>autocontrol</CustomText>
-              <CustomText customStyles={styles.groupAuthor}>Luis R.</CustomText>
-            </View>
-            <View>
-              <View style={[styles.groupBox, { backgroundColor: '#26D1A3' }]}>
-                <TouchableOpacity style={styles.addButton}>
-                  <AddSvg />
-                </TouchableOpacity>
-              </View>
-              <CustomText customStyles={styles.groupName}>motivación</CustomText>
-              <CustomText customStyles={styles.groupAuthor}>John D.</CustomText>
-            </View>
+            {
+              loading
+                ?
+                <ActivityIndicator size="large" />
+                :
+                results.map((result, index) => {
+                  const color = getColour(index);
+                  
+                  return (
+                    <View key={index}>
+                      <TouchableOpacity style={[styles.groupBox, { backgroundColor: color }]} />
+                      <CustomText customStyles={styles.groupName}>{result["sourceResource.title"]}</CustomText>
+                      <CustomText customStyles={styles.groupAuthor}>{result["sourceResource.creator"]}</CustomText>
+                    </View>
+                  )
+                  
+                })
+            }
           </ScrollView>
         </View>
         <View>
@@ -71,7 +109,7 @@ const Feed = () => {
           </View>
           <View style={styles.scrollContainer}>
             <ScrollView style={styles.scroll} horizontal showsHorizontalScrollIndicator={false}>
-              <TouchableOpacity style={{marginRight: 20}}>
+              <TouchableOpacity style={{ marginRight: 20 }}>
                 <View style={styles.postBox}>
                   <View style={styles.postPicture} />
                   <View style={{ alignItems: 'flex-start', marginLeft: 10 }}>

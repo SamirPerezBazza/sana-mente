@@ -118,5 +118,29 @@ export const styles = ScaledSheet.create({
   postTitle: {
     fontSize: '13@vs',
     textAlign: 'center'
+  },
+  modalContainer: {
+    position: 'absolute',
+    bottom: 0,
+    backgroundColor: "#FFF",
+    height: '60%',
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    paddingHorizontal: '20@s',
+  },
+  modalItem: {
+    marginTop: '10@s',
+    borderRadius: '10@vs',
+    paddingHorizontal: '5@s',
+    alignItems: 'center',
+    width: '150@s',
+    height: '30@vs',
+    justifyContent: 'center',
+  },
+  keyword: {
+    fontSize: '15@vs',
+    color: '#FFF',
   }
 });

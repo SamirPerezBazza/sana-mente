@@ -9,7 +9,7 @@ const styles = ScaledSheet.create({
     marginBottom: '10@vs',
   },
   leftSide: {
-    flex: 1.2,
+    flex: 3,
     paddingTop: '12@vs',
     paddingLeft: '12@vs',
   },
@@ -38,6 +38,25 @@ const styles = ScaledSheet.create({
   chatIcon: {
     paddingRight: '15@vs',
     paddingTop: '50@vs',
+  },
+  modal: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  modalContainer: {
+    backgroundColor: "#FFF",
+    height: '60%'
   }
 });
 

@@ -1,6 +1,7 @@
 import Chats from "../../screens/Dashboard/Chats/Chats";
 import Feed from "../../screens/Dashboard/Feed/Feed";
 import Groups from "../../screens/Dashboard/Groups/Groups";
+import Profile from "../../screens/Dashboard/Profile/Profile";
 
 export const routesTab = [
   {
@@ -12,8 +13,12 @@ export const routesTab = [
     component: Groups,
   },
   {
-    name: 'ChatScreen',
-    component: Chats,
+    name: 'ProfileScreen',
+    component: Profile,
   },
+  // {
+  //   name: 'ChatScreen',
+  //   component: Chats,
+  // },
 ]
 

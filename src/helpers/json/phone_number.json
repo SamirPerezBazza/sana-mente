@@ -1,0 +1,229 @@
+[
+  {
+    "zone": "Atlántico",
+    "name": "CRUE",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "(5) 330 9000",
+      "(5) 330 8100",
+      "(5) 330 8101"
+    ]
+  },
+  {
+    "zone": "Antioquia (Medellín)",
+    "name": "Línea amiga",
+    "hour": "Lunes a viernes 7:30am a 7:30pm. Sábados 7:30am a 2:30pm",
+    "numbers": [
+      "(4) 444 4448"
+    ]
+  },
+  {
+    "zone": "Arauca",
+    "name": "Línea",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "125"
+    ]
+  },
+  {
+    "zone": "Barranquilla",
+    "name": "Línea de la vida",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "(5) 339 9999"
+    ]
+  },
+  {
+    "zone": "Bogotá D.C.",
+    "name": "Línea",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "106"
+    ]
+  },
+  {
+    "zone": "Bogotá D.C.",
+    "name": "Whatsapp",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "300 754 9833"
+    ]
+  },
+  {
+    "zone": "Bogotá D.C.",
+    "name": "Línea psicoactiva \"Activa tu mente, transforma tu vida\"",
+    "hour": "Lunes a sábado de 7:00 am. a 10:00 pm. jornada continua.",
+    "numbers": [
+      "01 8000 112 439"
+    ]
+  },
+  {
+    "zone": "Bolívar",
+    "name": "Centro Regulador de Urgencias y Emergencias",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "(5) 664 5612",
+      "(5) 664 4675"
+    ]
+  },
+  {
+    "zone": "Bolívar",
+    "name": "Línea",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "125"
+    ]
+  },
+  {
+    "zone": "Boyacá",
+    "name": "Línea amiga",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "106"
+    ]
+  },
+  {
+    "zone": "Caquetá",
+    "name": "Centro Regulador de Urgencias y Emergencias",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "318 617 5909",
+      "435 6021 Extensión 51"
+    ]
+  },
+  {
+    "zone": "Caquetá \n (Municipio de San Vicente del Caguán)",
+    "name": "Centro de escucha comunitario (Línea y Whatsapp)",
+    "hour": "Facebook: San Rafael Escucha Lunes a lunes 7:00 am. a 7:00 pm.",
+    "numbers": [
+      "321 467 8323"
+    ]
+  },
+  {
+    "zone": "Caquetá \n (Municipio de Cartagena del Chairá)",
+    "name": "Centro de escucha comunitario (Línea y Whatsapp)",
+    "hour": "Lunes 7:00 am. a 12:00 M. Jueves: 2:00 pm. a 6:00 pm. \n Viernes 7: 00 am. a 12: 00 M. y 2: 00 pm. a 6: 00 pm. Sábado: 8: 00 am. a 12: 00 m.",
+    "numbers": [
+      "316 541 3108"
+    ]
+  },
+  {
+    "zone": "Cartagena DT",
+    "name": "Línea",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "125"
+    ]
+  },
+  {
+    "zone": "Cauca",
+    "name": "Línea CRUE",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "820 5390",
+      "820 5366",
+      "321 812 8623",
+      "321 700 5636"
+    ]
+  },
+  {
+    "zone": "Casanare",
+    "name": "Centro Regulador de Urgencias y Emergencias",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "317 371 7451"
+    ]
+  },
+  {
+    "zone": "Casanare",
+    "name": "Línea Amiga \n (Municipio de Aguazul)",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "318 299 0629"
+    ]
+  },
+  {
+    "zone": "Risaralda",
+    "name": "Línea amiga \"Ámate y Vive\"",
+    "hour": "Lunes a viernes 8:00 am.-12:00 m. - 2:00 - 5:00 pm.",
+    "numbers": ["106 - (6)333 9610"]
+  },
+  {
+    "zone":"Cesar",
+    "name":"Línea Vital",
+    "hour": "",
+    "numbers": [
+      "#123"
+    ]
+  },
+  {
+    "zone":"Cundinamcarca",
+    "name":"Línea",
+    "hour": "",
+    "numbers":["123"]
+  },
+  {
+    "zone":"Cundinamcarca",
+    "name": "Celular",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "321 248 0377"
+    ]
+  },
+  {
+    "zone":"Guajira",
+    "name": "Línea Esperanza",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "01 8000 943 782"
+    ]
+  },
+  {
+    "zone":"Meta",
+    "name": "Línea Amiga",
+    "hour": "Lunes a domingo de 9:00 a.m. a 9:00 p.m.",
+    "numbers": [
+      "312 575 1135"
+    ]
+  },
+  {
+    "zone":"Putumayo",
+    "name": "CRUE",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "312 319 1736"
+    ]
+  },
+  {
+    "zone":"Huila",
+    "name": "Centro de Escucha (Línea y Chat)",
+    "hour": "TODO EL DÍA",
+    "numbers": [
+      "321 907 3439",
+      "(8)870 2277"
+    ]
+  },
+  {
+    "zone":"Sincelejo",
+    "name": "CRUE",
+    "hour": "",
+    "numbers": [
+      "(5)282 2556"
+    ]
+  },
+  {
+    "zone":"Sincelejo",
+    "name": "Whatsapp",
+    "hour": "Lunes a viernes: 8:00 a.m. a 10:00 p.m.\nFines de semana: 9: 00 a.m. a 5: 00 p.m.",
+    "numbers": [
+      "315 698 4482"
+    ]
+  },
+  {
+    "zone":"Valle del Cauca",
+    "name":"Línea",
+    "hour":"",
+    "numbers":["106"]
+  }
+
+]
