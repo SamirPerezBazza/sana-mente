@@ -17,7 +17,7 @@ export default function Questions({ value, onChange, onNext }) {
   ];
 
   const handleChange = (text) => {
-    onChange(prev => ({ ...prev, question: text }))
+    onChange("question", text);
     onNext();
   };
 
@@ -35,7 +35,7 @@ export default function Questions({ value, onChange, onNext }) {
           <TouchableOpacity
             key={index}
             style={[styles.option, { alignItems: alignment }]}
-            onPress={() => handleChange(option.text)}
+              onPress={() => handleChange(option.text)}
           >
             {option.background}
             <CustomText customStyles={[styles.question, {left: left}]}>{option.text}</CustomText>

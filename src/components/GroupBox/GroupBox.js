@@ -42,7 +42,7 @@ const GroupBox = (props) => {
       </Modal>
       <View style={styles.leftSide}>
         <CustomText customStyles={styles.name}>{zone}</CustomText>
-        <CustomText customStyles={styles.author}>{name}</CustomText>
+        <CustomText numberOfLines={1} customStyles={styles.author}>{name}</CustomText>
         <CustomText customStyles={styles.author}>{hour}</CustomText>
         {numbers.map((number, index) => (
           <CustomText key={index} customStyles={styles.name}>{number}</CustomText>

@@ -27,7 +27,7 @@ const Login = ({ navigation }) => {
       )
       .then(({response})=>response.data)
       .then((res)=>{
-        storeData('login', JSON.stringify({...values, token: res.token})).then(() => {
+        storeData('login', JSON.stringify({...values, token: res.token, username: res.username})).then(() => {
         navigation.navigate('DashboardScreen', { screen: 'FeedScreen' });
       });
       })

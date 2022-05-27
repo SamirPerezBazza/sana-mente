@@ -7,6 +7,7 @@ import AddSvg from '../../../assets/svgs/add'
 import { images } from '../../../helpers/imageArray'
 import { styles } from './styles'
 import useFeed from './useFeed'
+import { getData } from '../../../helpers/storage'
 
 const Feed = () => {
 
@@ -19,6 +20,7 @@ const Feed = () => {
   const getColour = (index) => colours[index % colours.length];
 
   const {
+    name,
     keywords,
     setKeywords,
     results,
@@ -31,13 +33,14 @@ const Feed = () => {
     handleGoToLink
   } = useFeed();
 
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.notification}>
         <BellSvg />
       </TouchableOpacity>
       <View style={styles.titleBox}>
-        <CustomText customStyles={styles.title}>Hola Mary</CustomText>
+        <CustomText customStyles={styles.title}>Hola {name}</CustomText>
         <CustomText customStyles={styles.subTitle}>¿cómo te sientes hoy?</CustomText>
       </View>
       <View style={styles.moodContainer}>

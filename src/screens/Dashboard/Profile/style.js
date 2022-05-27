@@ -26,6 +26,22 @@ const styles = ScaledSheet.create({
     marginVertical: '30@vs',
     fontSize: "35@vs",
   },
+  circleContainer:{
+    marginTop: '30@vs',
+    width: "200@s",
+    height: "200@s",
+    borderRadius: "100@s",
+    borderWidth: "2@s",
+    borderColor: "#25D0A2",
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  circle: {
+    width: "190@s",
+    height: "190@s",
+    borderRadius: "100@s",
+    backgroundColor: "#B5F3FF",
+  }
 });
 
 export default styles;

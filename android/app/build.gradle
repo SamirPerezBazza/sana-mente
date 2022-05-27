@@ -230,6 +230,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('sanamente.keystore')
+            storePassword 'system2010'
+            keyAlias 'sanamente'
+            keyPassword 'system2010'
+        }
     }
     buildTypes {
         debug {
@@ -241,6 +247,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
 

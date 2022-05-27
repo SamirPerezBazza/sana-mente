@@ -34,30 +34,41 @@ export default function Process({navigation}) {
   const handleFinish = async()=>{
     try {
       setLoading(true)
+
+      let headers = new Headers();
+
+      headers.append('Content-Type', 'application/json');
+
+
       const request = {
-        headers: {'Content-Type': 'application/json'},
+        headers: headers,
         method: 'POST',
         body: JSON.stringify({
-          "username": form.name,
-          "email": params.email,
-          "age": form.age,
-          "decision": form.question,
-          "student": form.student,
-          "password": params.password
-        })
+          username: form.name,
+          email: params.email,
+          age: form.age,
+          decision: form.question,
+          student: form.student,
+          password: params.password
+        }),
+        redirect: 'follow'
       }
 
-      const response = await fetch('https://sana-mente-api.herokuapp.com/api/auth/signup', request);
-      const result = await response.json();
+      console.log(form)
 
-      console.log("result", result)
+      const response = await fetch('https://sana-mente-api.herokuapp.com/api/auth/signup', request);
+      // const result = await response.json();
+
+      console.log("resposne", response)
+      // console.log("result", result)
 
       if (response.status == 200){
-        navigation.navigate('DashboardScreen', { screen: 'FeedScreen' });
+        navigation.navigate('LoginScreen');
       }
       setLoading(false)
 
     } catch (error) {
+      console.log("error", error)
       setLoading(false)
     }
 

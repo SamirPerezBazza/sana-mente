@@ -6,7 +6,7 @@ import { styles } from './styles'
 export default function Student({ onChange, onNext }) {
 
   const handlePress = (answer) => {
-    onChange(prev => ({ ...prev, student: answer }))
+    onChange("student", answer)
     onNext();
   }
 

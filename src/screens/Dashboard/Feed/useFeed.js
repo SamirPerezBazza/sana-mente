@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { Linking } from 'react-native';
+import { getData } from '../../../helpers/storage';
 
 export default function useFeed() {
 
@@ -16,6 +17,8 @@ export default function useFeed() {
     "ira",
   ]
 
+  const [name, setName] = React.useState('');
+
   const [keywords, setKeywords] = React.useState(["psicologia"]);
   const [results, setResults] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
@@ -26,9 +29,10 @@ export default function useFeed() {
   async function getDocuments() {
     setLoading(true);
     try {
+
       const response = await fetch(`https://sana-mente-api.herokuapp.com/api/documents/${keywords.join(',')}`);
       const result = await response.json();
-      console.log("result", result);
+      // console.log("result", result);
       setResults(result)
       setLoading(false)
     } catch (error) {
@@ -51,11 +55,20 @@ export default function useFeed() {
     Linking.openURL(link);
   }
 
+  async function getName(){
+    let user = await getData('login');
+    user = JSON.parse(user);
+    // console.log(user.username)
+    setName(user.username)
+  }
+
   React.useEffect(() => {
     getDocuments();
+    getName()
   }, [keywords]);
 
   return {
+    name,
     keywords,
     setKeywords,
     results,

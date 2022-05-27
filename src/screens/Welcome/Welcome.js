@@ -25,7 +25,7 @@ const Welcome = ({ navigation }) => {
 
   async function getFirstScreen() {
     const isLogged = await getData('login');
-    console.log(isLogged);
+    // console.log(isLogged);
     if (isLogged) {
       navigation.navigate('DashboardScreen', { screen: 'FeedScreen' });
     }

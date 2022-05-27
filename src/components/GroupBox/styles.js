@@ -27,10 +27,11 @@ const styles = ScaledSheet.create({
     marginBottom: '5@vs',
   },
   author: {
-    fontSize: '11@vs',
+    fontSize: '6@vs',
   },
   name: {
-    fontSize: '15@vs',
+    fontSize: '12@vs',
+    width: 200,
   },
   members: {
     fontSize: '10@vs',
