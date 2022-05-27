@@ -27,7 +27,8 @@ const Feed = () => {
     modalVisible,
     setModalVisible,
     words,
-    handlePress
+    handlePress,
+    handleGoToLink
   } = useFeed();
 
   return (
@@ -63,9 +64,9 @@ const Feed = () => {
                 const color = keywords.includes(word) ? "#FFD75D" : "#303030";
 
                 return (
-                  <TouchableOpacity 
-                  key={index}
-                   style={[styles.modalItem, { backgroundColor: color }]}
+                  <TouchableOpacity
+                    key={index}
+                    style={[styles.modalItem, { backgroundColor: color }]}
                     onPress={() => handlePress(word)}>
                     <CustomText customStyles={styles.keyword}>{word}</CustomText>
                   </TouchableOpacity>
@@ -76,7 +77,7 @@ const Feed = () => {
         </Modal>
         <View style={styles.groupTitle}>
           <CustomText customStyles={styles.middleText}>explora grupos</CustomText>
-          <TouchableOpacity onPress={()=>setModalVisible(true)}>
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
             <CustomText customStyles={styles.lightText}>palabras</CustomText>
           </TouchableOpacity>
         </View>
@@ -89,15 +90,18 @@ const Feed = () => {
                 :
                 results.map((result, index) => {
                   const color = getColour(index);
-                  
+
                   return (
                     <View key={index}>
-                      <TouchableOpacity style={[styles.groupBox, { backgroundColor: color }]} />
+                      <TouchableOpacity
+                        style={[styles.groupBox, { backgroundColor: color }]}
+                        onPress={() => handleGoToLink(result["isShownAt"])}
+                      />
                       <CustomText customStyles={styles.groupName}>{result["sourceResource.title"]}</CustomText>
-                      <CustomText customStyles={styles.groupAuthor}>{result["sourceResource.creator"]}</CustomText>
+                      <CustomText numberOfLines={1} customStyles={[styles.groupAuthor]}>{result["sourceResource.creator"]}</CustomText>
                     </View>
                   )
-                  
+
                 })
             }
           </ScrollView>
@@ -109,7 +113,7 @@ const Feed = () => {
           </View>
           <View style={styles.scrollContainer}>
             <ScrollView style={styles.scroll} horizontal showsHorizontalScrollIndicator={false}>
-              <TouchableOpacity style={{ marginRight: 20 }}>
+              {/* <TouchableOpacity style={{ marginRight: 20 }}>
                 <View style={styles.postBox}>
                   <View style={styles.postPicture} />
                   <View style={{ alignItems: 'flex-start', marginLeft: 10 }}>
@@ -130,7 +134,7 @@ const Feed = () => {
                     <CustomText customStyles={styles.postTitle}>¿Por qué le pasan cosas {'\n'} malas a la gente buena?</CustomText>
                   </View>
                 </View>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </ScrollView>
           </View>
         </View>

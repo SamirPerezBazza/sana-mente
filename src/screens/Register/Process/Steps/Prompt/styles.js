@@ -19,5 +19,24 @@ export const styles = ScaledSheet.create({
     fontSize: '30@vs',
     fontFamily: 'Chivo-Light',
     textAlign: 'center'
+  },
+  optionContainer: {
+    justifyContent: 'center',
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: '100@vs',
+  },
+  question:{
+    color: "black",
+    fontSize: '10@vs',
+    textAlign: 'center',
+    position: 'absolute',
+    top: '50@vs',
+  },
+  option: {
+    width: '135@s',
+    height: '120@vs',
+    margin: '10@vs', 
   }
 })

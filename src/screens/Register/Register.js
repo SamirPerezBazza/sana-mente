@@ -19,7 +19,7 @@ const Register = () => {
       setErrors(registerErrors);
     } else {
       setErrors({});
-      navigation.navigate('ProcessScreen')
+      navigation.navigate('ProcessScreen', {email: values.email, password: values.password});
       //Fetch API
     }
   }

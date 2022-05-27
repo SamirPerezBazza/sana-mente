@@ -1,0 +1,15 @@
+import { View, Text } from 'react-native'
+import React from 'react'
+import CustomText from '../../../../../components/CustomText/CustomText'
+import { styles } from '../Name/styles'
+import Input from '../../../../../components/Input/Input'
+
+export default function Age({title, name, value, onChange}) {
+  return (
+    <View style={styles.container}>
+      <CustomText customStyles={styles.title}>{title}</CustomText>
+      <Input customStyles={styles.input} name={name} value={value} onChange={onChange} type="numeric" />
+      <CustomText customStyles={styles.tooltip}>solo los expertos podrán ver tus datos</CustomText>
+    </View>
+  )
+}

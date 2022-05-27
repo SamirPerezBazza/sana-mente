@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
+import { Linking } from 'react-native';
 
 export default function useFeed() {
 
@@ -46,6 +47,10 @@ export default function useFeed() {
     }
   }
 
+  function handleGoToLink(link){
+    Linking.openURL(link);
+  }
+
   React.useEffect(() => {
     getDocuments();
   }, [keywords]);
@@ -59,6 +64,7 @@ export default function useFeed() {
     modalVisible,
     setModalVisible,
     words,
-    handlePress
+    handlePress,
+    handleGoToLink
   }
 }

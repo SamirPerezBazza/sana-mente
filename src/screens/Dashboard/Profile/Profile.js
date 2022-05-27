@@ -1,9 +1,16 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import CustomText from '../../../components/CustomText/CustomText';
+import { clearData } from '../../../helpers/storage';
 import styles from './style'
 
-export default function Profile() {
+export default function Profile({navigation}) {
+
+  function handleLogout(){
+    clearData();
+    navigation.navigate("WelcomeScreen");
+  }
+
   return (
     <View style={styles.container}>
       <CustomText customStyles={styles.title}>
@@ -19,7 +26,10 @@ export default function Profile() {
           Necesito ayuda
         </CustomText>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.logout}>
+      <TouchableOpacity 
+      style={styles.logout}
+        onPress={handleLogout}
+      >
         <CustomText
         customStyles={styles.logoutPrompt}
         >

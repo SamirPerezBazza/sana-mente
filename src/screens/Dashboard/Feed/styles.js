@@ -77,6 +77,7 @@ export const styles = ScaledSheet.create({
     fontSize: '10@vs',
     color: '#858181',
     marginLeft: '10@s',
+    width: 200,
   },
   addButton: {
     width: '30@s',
